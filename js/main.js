@@ -15,6 +15,35 @@
  */
 'use strict';
 
+
+// github oauth2
+
+function signInWithGithub(){
+  var provider = new firebase.auth.GithubAuthProvider();
+provider.addScope('repo');
+provider.setCustomParameters({
+  'allow_signup': 'false'
+});
+
+firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  console.log(user);
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+  
+}
 // Signs-in Friendly Chat.
 function signIn() {
   // Sign in Firebase using popup auth and Google as the identity provider.
@@ -190,6 +219,7 @@ function authStateObserver(user) {
 
     // Hide sign-in button.
     signInButtonElement.setAttribute('hidden', 'true');
+    signInWithGithubButtonElement.setAttribute('hidden', 'true');
 
     // We save the Firebase Messaging Device token and enable notifications.
     saveMessagingDeviceToken();
@@ -201,6 +231,7 @@ function authStateObserver(user) {
 
     // Show sign-in button.
     signInButtonElement.removeAttribute('hidden');
+    signInWithGithubButtonElement.removeAttribute('hidden');
   }
 }
 
@@ -358,6 +389,7 @@ var mediaCaptureElement = document.getElementById('mediaCapture');
 var userPicElement = document.getElementById('user-pic');
 var userNameElement = document.getElementById('user-name');
 var signInButtonElement = document.getElementById('sign-in');
+var signInWithGithubButtonElement = document.getElementById('sign-in-with-github');
 var signOutButtonElement = document.getElementById('sign-out');
 var signInSnackbarElement = document.getElementById('must-signin-snackbar');
 
@@ -365,6 +397,7 @@ var signInSnackbarElement = document.getElementById('must-signin-snackbar');
 messageFormElement.addEventListener('submit', onMessageFormSubmit);
 signOutButtonElement.addEventListener('click', signOut);
 signInButtonElement.addEventListener('click', signIn);
+signInWithGithubButtonElement.addEventListener('click', signInWithGithub);
 
 // Toggle for the button.
 messageInputElement.addEventListener('keyup', toggleButton);
