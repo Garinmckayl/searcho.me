@@ -432,6 +432,11 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   padding: 15px 45px;
 }
 
+.btn-auth{
+  font-size: 9px;
+  padding: 8px 30px;
+}
+
 
 .logo{
   height: 30px;
