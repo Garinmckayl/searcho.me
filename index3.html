@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Searcho.me</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="  https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+" rel="stylesheet">
+ <link rel="icon" type="image/png" sizes="16x16" src="https://cdn.glitch.com/0087372b-823c-4568-adbd-11bcfcb64f7f%2Ffavicon.ico?v=1589153652175">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/new-age.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+<!-- Add the standard Performance Monitoring library -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-performance.js"></script>
+    <script src="firebase-messaging-sw.js"></script>
+  
+  
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="https://cdn.glitch.com/0087372b-823c-4568-adbd-11bcfcb64f7f%2Fscrnli_5_10_2020_1-56-00%20PM.png?v=1589144179071"></img></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" hidden id="dashboard" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul> 
+        
+      <div id="user-container" class="navbar-nav ml-auto">
+        <div hidden id="user-pic" class="rounded-circle"></div>
+        <div hidden id="user-name"></div>
+        <button hidden id="sign-out" class="btn btn-outline-danger btn-auth">
+          Sign-out
+        </button>
+        <button hidden id="sign-in" class="btn btn-outline btn-auth">
+          <i class="fa fa-google"></i>Sign-in with Google
+        </button>
+        <button hidden id="sign-in-with-github" class="btn btn-outline  btn-auth">
+          <i class="fa fa-github"></i>Sign-in with Github
+        </button>
+      </div>
+        
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Save your users enormous amount of time and increase your success by implementing our AI-based easy page search system.</h1>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white btn btn-outline btn-xl">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+        <button hidden id="sign-in-with-github" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white btn btn-outline btn-xl">
+          <i class="material-icons">account_circle</i>Sign-in with Github
+        </button>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+            <div class="device-mockup iphone6_plus portrait white">
+              <div class="device">
+                <div class="screen">
+                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                  <img src="https://cdn.glitch.com/0087372b-823c-4568-adbd-11bcfcb64f7f%2Fpage.png?v=1589147431601" class="img-fluid" alt="">
+                </div>
+                <div class="button">
+                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="download bg-primary text-center" id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2 class="section-heading">Increase usage of you application!</h2>
+          <p>Research shows your users spent most of there time trying to find you product not using it.</p>
+          <div class="badges">
+            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+
+      <!-- Messages container -->
+      <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <div id="messages">
+          </div>
+          <form id="message-form" action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="message" autocomplete="off">
+              <label class="mdl-textfield__label" for="message">Message...</label>
+            </div>
+            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Send
+            </button>
+          </form>
+          <form id="image-form" action="#">
+            <input id="mediaCapture" type="file" accept="image/*" capture="camera">
+            <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+              <i class="material-icons">image</i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+
+    </div>
+  </main>
+
+  </section>
+
+<!-- <section class="features" id="features"> 
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>Unlimited Features, Unlimited Fun</h2>
+        <p class="text-muted">Check out what you can do with this app theme!</p>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 my-auto">
+          <div class="device-container">
+            <div class="device-mockup iphone6_plus portrait white">
+              <div class="device">
+                <div class="screen">
+                  <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="button">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 my-auto">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-screen-smartphone text-primary"></i>
+                  <h3>Device Mockups</h3>
+                  <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-camera text-primary"></i>
+                  <h3>Flexible Use</h3>
+                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-present text-primary"></i>
+                  <h3>Free to Use</h3>
+                  <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="feature-item">
+                  <i class="icon-lock-open text-primary"></i>
+                  <h3>Open Source</h3>
+                  <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<!--  <section class="cta">
+    <div class="cta-content">
+      <div class="container">
+        <h2>Stop waiting.<br>Start building.</h2>
+        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>  -->
+
+<!--   <section class="contact bg-primary" id="contact">
+    <div class="container">
+      <h2>We
+        <i class="fas fa-heart"></i>
+        new friends!</h2>
+      <ul class="list-inline list-social">
+        <li class="list-inline-item social-twitter">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-google-plus">
+          <a href="#">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+
+  <footer>
+    <div class="container">
+      <p>&copy; Searcho.me 2019. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="mailto:natnaelgetenew@gmail.com">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+  <!-- Custom scripts for this template -->
+  <script src="js/new-age.min.js"></script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us4.list-manage.com","uuid":"a45ca27fcc08e4bed1fc56b51","lid":"489c458b92","uniqueMethods":true}) })</script>
+  
+  
+    <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCCzPJA3ZM5JOCaksiIsXMP6ASoU8Q-DFY",
+    authDomain: "searchomestartup07.firebaseapp.com",
+    databaseURL: "https://searchomestartup07.firebaseio.com",
+    projectId: "searchomestartup07",
+    storageBucket: "searchomestartup07.appspot.com",
+    messagingSenderId: "284087593730",
+    appId: "1:284087593730:web:ba2032997e9e6cbbcbb01b",
+    measurementId: "G-95JGMF610J"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  <script src="js/main.js"></script>
+  <style>
+    .fa-google, .fa-github{
+      font-size: 20px;
+      padding-right: 5px;
+      padding-top: 10px;
+    }
+  </style>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
